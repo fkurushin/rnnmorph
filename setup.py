@@ -15,8 +15,8 @@ setup(
                 'POS-tagging in Russian language.',
     author='Ilya Gusev',
     author_email='phoenixilya@gmail.com',
-    url='https://github.com/IlyaGusev/rnnmorph',
-    download_url='https://github.com/IlyaGusev/rnnmorph/archive/0.4.0.tar.gz',
+    # url='https://github.com/IlyaGusev/rnnmorph',
+    # download_url='https://github.com/IlyaGusev/rnnmorph/archive/0.4.0.tar.gz',
     keywords=['nlp', 'russian', 'lstm', 'morphology'],
     package_data={
         'rnnmorph': ['models/ru/*', 'models/en/*']
