@@ -1,12 +1,10 @@
 import os
 from collections import defaultdict
-try:
-    from importlib.resources import files
-    MODELS_FOLDER = str(files(__name__) / "models")
-except ImportError:
-    # Fallback for Python < 3.9
-    from importlib_resources import files
-    MODELS_FOLDER = str(files(__name__) / "models")
+from pathlib import Path
+
+# Use pathlib to get the directory of this file, then construct paths relative to it
+_current_dir = Path(__file__).parent
+MODELS_FOLDER = str(_current_dir / "models")
 LANGUAGES = ("ru", "en")
 
 FILES = dict()
@@ -28,15 +26,15 @@ for language in LANGUAGES:
     for key, file_name in FILES.items():
         MODELS_PATHS[language][key] = os.path.join(MODELS_FOLDER, language, file_name)
 
-TEST_TAGGED_FOLDER = str(files(__name__) / "test" / "tagged")
-TEST_UNTAGGED_VK = str(files(__name__) / "test" / "untagged" / "VK_extracted.txt")
-TEST_UNTAGGED_LENTA = str(files(__name__) / "test" / "untagged" / "Lenta_extracted.txt")
-TEST_UNTAGGED_JZ = str(files(__name__) / "test" / "untagged" / "JZ_extracted.txt")
-TEST_TAGGED_VK = str(files(__name__) / "test" / "tagged" / "VK_extracted.txt")
-TEST_TAGGED_LENTA = str(files(__name__) / "test" / "tagged" / "Lenta_extracted.txt")
-TEST_TAGGED_JZ = str(files(__name__) / "test" / "tagged" / "JZ_extracted.txt")
-TEST_TAGGED_EN_EWT_UD = str(files(__name__) / "test" / "tagged" / "en_ewt_ud_extracted.txt")
-TEST_GOLD_VK = str(files(__name__) / "test" / "gold" / "VK_gold.txt")
-TEST_GOLD_LENTA = str(files(__name__) / "test" / "gold" / "Lenta_gold.txt")
-TEST_GOLD_JZ = str(files(__name__) / "test" / "gold" / "JZ_gold.txt")
-TEST_GOLD_EN_EWT_UD = str(files(__name__) / "test" / "gold" / "en_ewt_ud_test.txt")
+TEST_TAGGED_FOLDER = str(_current_dir / "test" / "tagged")
+TEST_UNTAGGED_VK = str(_current_dir / "test" / "untagged" / "VK_extracted.txt")
+TEST_UNTAGGED_LENTA = str(_current_dir / "test" / "untagged" / "Lenta_extracted.txt")
+TEST_UNTAGGED_JZ = str(_current_dir / "test" / "untagged" / "JZ_extracted.txt")
+TEST_TAGGED_VK = str(_current_dir / "test" / "tagged" / "VK_extracted.txt")
+TEST_TAGGED_LENTA = str(_current_dir / "test" / "tagged" / "Lenta_extracted.txt")
+TEST_TAGGED_JZ = str(_current_dir / "test" / "tagged" / "JZ_extracted.txt")
+TEST_TAGGED_EN_EWT_UD = str(_current_dir / "test" / "tagged" / "en_ewt_ud_extracted.txt")
+TEST_GOLD_VK = str(_current_dir / "test" / "gold" / "VK_gold.txt")
+TEST_GOLD_LENTA = str(_current_dir / "test" / "gold" / "Lenta_gold.txt")
+TEST_GOLD_JZ = str(_current_dir / "test" / "gold" / "JZ_gold.txt")
+TEST_GOLD_EN_EWT_UD = str(_current_dir / "test" / "gold" / "en_ewt_ud_test.txt")
