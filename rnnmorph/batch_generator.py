@@ -65,10 +65,10 @@ class BatchGenerator:
         data = []
         target = []
 
-        words = np.zeros((n,  sentence_max_len), dtype=np.int)
-        grammemes = np.zeros((n, sentence_max_len, grammemes_count), dtype=np.float)
-        chars = np.zeros((n, sentence_max_len, self.build_config.char_max_word_length), dtype=np.int)
-        y = np.zeros((n, sentence_max_len), dtype=np.int)
+        words = np.zeros((n,  sentence_max_len), dtype=np.int32)
+        grammemes = np.zeros((n, sentence_max_len, grammemes_count), dtype=np.float32)
+        chars = np.zeros((n, sentence_max_len, self.build_config.char_max_word_length), dtype=np.int32)
+        y = np.zeros((n, sentence_max_len), dtype=np.int32)
 
         for i, sentence in enumerate(sentences):
             word_indices, gram_vectors, char_vectors = self.get_sample(
