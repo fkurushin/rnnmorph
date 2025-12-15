@@ -10,7 +10,7 @@ except:
 setup(
     name='rnnmorph',
     packages=find_packages(),
-    version='0.4.0',
+    version='0.4.1',
     description='RNNMorph: neural network disambiguation of pymorphy2 parses for precise '
                 'POS-tagging in Russian language.',
     author='Ilya Gusev',
