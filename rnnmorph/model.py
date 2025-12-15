@@ -402,4 +402,4 @@ class LSTMMorphoAnalysis:
             inputs.append(grammemes)
         if build_config.use_chars:
             inputs.append(chars)
-        return self.eval_model.predict(inputs, batch_size=batch_size)
+        return self.eval_model.predict(inputs, batch_size=batch_size, verbose=0)
